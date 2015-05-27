@@ -1,0 +1,60 @@
+Description: Fix radio and check widgets styles
+Author: Martin Abente Lahaye <tch@sugarlabs.org>
+Last-Update: 2015-05-27
+
+diff --git a/gtk3/theme/gtk-widgets.css.em b/gtk3/theme/gtk-widgets.css.em
+index bb46811..0ce14e1 100644
+--- a/gtk3/theme/gtk-widgets.css.em
++++ b/gtk3/theme/gtk-widgets.css.em
+@@ -732,7 +732,11 @@ SugarPaletteWindowWidget .check {
+ 
+ .radio:active,
+ .radio row:selected:active,
+-.radio row:selected:focused:active,
++.radio row:selected:focused:active {
++    background-image: url("assets/radio-active.svg");
++    -gtk-icon-source: url("assets/radio-active.svg");
++}
++
+ .radio:checked,
+ .radio row:selected:checked,
+ .radio row:selected:focused:checked {
+@@ -742,7 +746,11 @@ SugarPaletteWindowWidget .check {
+ 
+ .radio:active:selected,
+ .radio:selected row:selected:active,
+-.radio:selected row:selected:focused:active,
++.radio:selected row:selected:focused:active {
++    background-image: url("assets/radio-active-selected.svg");
++    -gtk-icon-source: url("assets/radio-active-selected.svg");
++}
++
+ .radio:checked:selected,
+ .radio:selected row:selected:checked,
+ .radio:selected row:selected:focused:checked {
+@@ -767,7 +775,11 @@ SugarPaletteWindowWidget .check {
+ 
+ .check:active,
+ .check row:selected:active,
+-.check row:selected:focused:active,
++.check row:selected:focused:active {
++    background-image: url("assets/checkbox-checked.svg");
++    -gtk-icon-source: url("assets/checkbox-checked.svg");
++}
++
+ .check:checked,
+ .check row:selected:checked,
+ .check row:selected:focused:checked {
+@@ -777,7 +789,11 @@ SugarPaletteWindowWidget .check {
+ 
+ .check:active:selected,
+ .check:selected row:selected:active,
+-.check:selected row:selected:focused:active,
++.check:selected row:selected:focused:active {
++    background-image: url("assets/checkbox-checked-selected.svg");
++    -gtk-icon-source: url("assets/checkbox-checked-selected.svg");
++}
++
+ .check:checked:selected,
+ .check:selected row:selected:checked,
+ .check:selected row:selected:focused:checked {
