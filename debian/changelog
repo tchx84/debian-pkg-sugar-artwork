@@ -1,3 +1,9 @@
+sugar-artwork-0.104 (0.105.1-1~tch3) trusty; urgency=medium
+
+  * More fixes to checkbox styles.
+
+ -- Martin Abente Lahaye <tch@tch>  Fri, 22 May 2015 12:13:13 -0400
+
 sugar-artwork-0.104 (0.105.1-1~tch2) trusty; urgency=medium
 
   * fixed radiobuttons and checkboxes styles.
