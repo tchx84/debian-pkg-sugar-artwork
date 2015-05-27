@@ -1,0 +1,23 @@
+diff --git a/gtk3/theme/gtk-widgets.css.em b/gtk3/theme/gtk-widgets.css.em
+index bb46811..02e67a1 100644
+--- a/gtk3/theme/gtk-widgets.css.em
++++ b/gtk3/theme/gtk-widgets.css.em
+@@ -602,7 +602,17 @@ SugarPaletteWindowWidget GtkToolButton .button:prelight {
+ }
+ 
+ .toolbar SugarRadioToolButton *:active,
+-SugarPaletteWindowWidget SugarRadioToolButton *:active,
++SugarPaletteWindowWidget SugarRadioToolButton *:active {
++    background-color: @button_grey;
++    border-radius: $(toolbutton_padding)px;
++}
++
++.toolbar SugarToggleToolButton *:active,
++SugarPaletteWindowWidget SugarToggleToolButton *:active {
++    background-color: @button_grey;
++    border-radius: $(toolbutton_padding)px;
++}
++
+ .toolbar SugarRadioToolButton *:checked,
+ SugarPaletteWindowWidget SugarRadioToolButton *:checked,
+ .toolbar SugarToggleToolButton *:checked,
