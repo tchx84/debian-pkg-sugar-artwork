@@ -1,0 +1,45 @@
+From 00ebb3850a1cbed11be1898b7d767523629186dd Mon Sep 17 00:00:00 2001
+From: Martin Abente Lahaye <tch@sugarlabs.org>
+Date: Wed, 1 Jul 2015 12:15:30 -0400
+Subject: [PATCH] Revert "Fix treeview background, fixes #4855"
+
+This reverts commit 813a2d77d83284b031a4f2bd5775b9f82b12846e.
+---
+ gtk3/theme/gtk-widgets.css.em | 13 ++-----------
+ 1 file changed, 2 insertions(+), 11 deletions(-)
+
+diff --git a/gtk3/theme/gtk-widgets.css.em b/gtk3/theme/gtk-widgets.css.em
+index 1c8f74e..67e4e48 100644
+--- a/gtk3/theme/gtk-widgets.css.em
++++ b/gtk3/theme/gtk-widgets.css.em
+@@ -1,10 +1,5 @@
+ ${
+ import math
+-from gi.repository import Gtk
+-
+-gtk_major = int(Gtk.get_major_version())
+-gtk_minor = int(Gtk.get_minor_version())
+-treeview_pseudo_element = gtk_major >= 3 and gtk_minor > 8
+ 
+ def my_floor(num):
+     return int(math.floor(num))
+@@ -226,14 +221,10 @@ column-header .button:hover:active {
+     border-width: 0px;
+ }
+ 
+-$[if treeview_pseudo_element] GtkTreeView row:even
+-$[else] GtkTreeView row:nth-child(even)
+-$[end if] {
++GtkTreeView row:nth-child(even) {
+     background-color: @row_even;
+ }
+-$[if treeview_pseudo_element] GtkTreeView row:odd
+-$[else] GtkTreeView row:nth-child(odd)
+-$[end if] {
++GtkTreeView row:nth-child(odd) {
+     background-color: @row_odd;
+ }
+ 
+-- 
+2.1.0
+
