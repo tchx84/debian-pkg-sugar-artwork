@@ -91,6 +91,19 @@ CDBS_BREAKS_$($1) +=, $(obsoletes)
 endef
 $(foreach p,pkg pkg-icon pkg-gtk2,$(eval $(call sugar-relations,$(value p))))
 
+# Replace previous package names to avoid conflicts
+CDBS_PROVIDES_$(pkg) +=, sugar-0.104-themes
+CDBS_REPLACES_$(pkg) +=, sugar-0.104-themes
+CDBS_CONFLICTS_$(pkg) +=, sugar-0.104-themes
+
+CDBS_PROVIDES_$(pkg-icon) +=, sugar-0.104-icon-theme
+CDBS_REPLACES_$(pkg-icon) +=, sugar-0.104-icon-theme
+CDBS_CONFLICTS_$(pkg-icon) +=, sugar-0.104-icon-theme
+
+CDBS_PROVIDES_$(pkg-gtk2) +=, gtk2-engines-sugar-0.104
+CDBS_REPLACES_$(pkg-gtk2) +=, gtk2-engines-sugar-0.104
+CDBS_CONFLICTS_$(pkg-gtk2) +=, gtk2-engines-sugar-0.104
+
 # Multiarch quirks
 #  * TODO: Stop depend on multiarch-support when Wheezy no longer supported
 CDBS_PREDEPENDS_$(pkg-lib) = $(if $(DEB_HOST_MULTIARCH),multiarch-support)
